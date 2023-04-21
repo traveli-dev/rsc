@@ -7,6 +7,7 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
+  "plugins": ["import"],
   "rules": {
     // 使ってない変数定義が残らないようにする
     "@typescript-eslint/no-unused-vars": [
