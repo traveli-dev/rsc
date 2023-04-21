@@ -1,0 +1,63 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    // 使ってない変数定義が残らないようにする
+    "@typescript-eslint/no-unused-vars": [
+      // _から始まる変数は対象から外す（関数の引数として使うため）
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    // 相対パスでimportしてたらエラー
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["./", "../"]
+      }
+    ],
+    // importの順番 pages/_app.tsxに揃っている
+    "import/order": [
+      "warn",
+      {
+        // groupごとに以下の順で並べる
+        "groups": [
+          // node.jsのbuiltinモジュール（fs, pathなど）
+          "builtin",
+          // installしたパッケージ（package.jsonに記載されている）
+          "external",
+          // type imports
+          "type"
+        ],
+        // グループごとの改行は入れない
+        "newlines-between": "never",
+        // グループ内はアルファベット順に並べる
+        "alphabetize": {
+          "order": "asc",
+          // 大文字と小文字を区別する
+          "caseInsensitive": false
+        },
+        // customグループを定義
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "type",
+            "position": "before"
+          }
+        ]
+      }
+    ],
+    // importをファイル先頭に記述
+    "import/first": "warn",
+    // 最後のimportの後に空行を追加
+    "import/newline-after-import": "warn"
+  }
+}
