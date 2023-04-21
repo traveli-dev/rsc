@@ -1,8 +1,18 @@
 {
-  "name": "works",
+  "name": "rsc",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "rsc": "bin/rsc"
+  },
+  "license": "MIT",
   "private": true,
   "packageManager": "yarn@3.5.0",
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc --build --watch",
+    "clean": "tsc --build --clean",
+    "rsc": "ts-node -r tsconfig-paths/register ./src/cli/index.ts",
     "format": "prettier --write .",
     "lint": "eslint --ext .ts"
   },

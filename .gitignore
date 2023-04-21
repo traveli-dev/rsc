@@ -10,4 +10,8 @@
 .yarn/cache
 #.pnp.*
 
+# Dependency directories
 node_modules
+
+# Dist *.js sources
+lib
