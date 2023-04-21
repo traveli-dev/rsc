@@ -1,5 +1,6 @@
 {
   "name": "works",
+  "private": true,
   "packageManager": "yarn@3.5.0",
   "scripts": {
     "format": "prettier --write .",
