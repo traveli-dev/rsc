@@ -6,7 +6,7 @@ HELP
 	helpだよ
 `;
 
-export const cli = (argv: string[], commands: yargs.CommandModule[]): void => {
+export const cli = (argv: string[], commands: any): void => {
   yargs(hideBin(argv)).scriptName('rsc').usage(help).command(commands).help()
     .argv;
 };

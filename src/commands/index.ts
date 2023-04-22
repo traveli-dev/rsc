@@ -1,3 +1,3 @@
-import { log } from '@/commands/log';
+import { pull } from '@/commands/pull';
 
-export const commands = [log];
+export const commands = [pull];

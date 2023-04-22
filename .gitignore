@@ -15,3 +15,6 @@ node_modules
 
 # Dist *.js sources
 lib
+
+rsc.config.json
+.env
