@@ -19,7 +19,7 @@ export const pullHandler = async (yarg: YargsArgs) => {
       and: [
         {
           property: 'filename',
-          select: {
+          rich_text: {
             equals: filename
           }
         },
@@ -38,7 +38,6 @@ export const pullHandler = async (yarg: YargsArgs) => {
   const pageId = res.results[0].id;
 
   const page = await notion.blocks.children.list({ block_id: pageId });
-
   const texts = page.results.map((item) => {
     if ('paragraph' in item) {
       const richText = item.paragraph.rich_text[0];
