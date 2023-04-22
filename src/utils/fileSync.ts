@@ -27,3 +27,8 @@ export const safeWriteFileSync = (path: string, data: string) => {
 
   fs.writeFileSync(path, data);
 };
+
+export const readJson = <T>(path: string): T => {
+  const content = fs.readFileSync(path, 'utf-8');
+  return JSON.parse(content);
+};
